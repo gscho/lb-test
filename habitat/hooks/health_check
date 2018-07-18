@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 CHECK_ADDR="127.0.0.1:4567/health"
 raw_data="$(curl -o /dev/null --silent --head --write-out '%{http_code}\n' ${CHECK_ADDR})"
 status="$(echo "${raw_data: : -1}" | awk '{print $3}')"
