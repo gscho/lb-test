@@ -1,5 +1,5 @@
 #!/bin/bash
 
 exec 2>&1
-
-exec ruby {{pkg.path}}/app/lb-test.rb
+export GEM_PATH="{{pkg.path}}/vendor/bundle/ruby/2.5.0"
+exec ruby {{pkg.path}}/lb-test.rb
